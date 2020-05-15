@@ -77,19 +77,23 @@ insert into Modulo (Codice, Nome, Descrizione, CFU)
 insert into Corso_Laurea (Codice, Nome, Descrizione)
   values ('110', 'Informatica e Comunicazione Digitale', 'descrizione');
 insert into Dipartimento (Codice, Nome)
-  values ('1001', 'Dipartimento di Informatica di Bari');
+  values ('1001', 'Dipartimento di Informatica di Bari'),
+         ('1002', 'Dipartimento di Chimica di Bari');
 insert into Sede (Codice, Indirizzo, Città)
-  values ('10001', 'Viale del Turismo', 'Taranto');
+  values ('10001', 'Viale del Turismo', 'Taranto'),
+         ('10002', 'Via E. Orabona', 'Bari');
 insert into Studente (Matricola, Corso_laurea, Nome, Cognome, Data_nascita, Codice_fiscale, Foto)
   values ('123456', '110', 'Andrea', 'Rossi', '2000-01-01', 'GSPVRC00A01L049C', NULL),
          ('123457', '110', 'Stefano', 'Neri', '1999-02-03', 'NRESFN99C02A662A', NULL);
 insert into Docente (Matricola, Dipartimento, Nome, Cognome, Data_nascita, Codice_fiscale, Foto)
   values ('123333', '1001', 'Stefano', 'Neri', '1974-01-01', 'STFNRE74A01L049Y', NULL),
          ('123334', '1001', 'Alessio', 'Bianchi', '1978-08-20', 'LSSBCH78M20E506V', NULL),
-         ('123335', '1001', 'Marco', 'Bianchi', '1986-05-07', 'BNCMRC86E07E986J', NULL);
+         ('123335', '1001', 'Marco', 'Bianchi', '1986-05-07', 'BNCMRC86E07E986J', NULL),
+         ('123336', '1001', 'Luca', 'Marrone', '1980-01-01', 'LCUMRN80A01E506D', NULL);
 insert into Esame (Matricola_studente, Codice_modulo, Matricola_docente, Data, Voto, Note)
   values ('123456', '47029484', '123333', '2020-04-07', 30, 'note'),
          ('123457', '47029483', '123334', '2020-04-07', 28, 'note'),
          ('123456', '47029485', '123335', '2020-06-15', 23, 'note');
 insert into Sede_Dipartimento (Codice_Sede, Codice_Dipartimento, Note)
-  values ('10001', '1001', 'note');
+  values ('10001', '1001', 'note'),
+         ('10002', '1002', 'note');
