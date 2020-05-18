@@ -73,7 +73,8 @@ create table Sede_Dipartimento (
 insert into Modulo (Codice, Nome, Descrizione, CFU)
   values ('47029484', 'Basi di Dati', 'creazione e gestione database', 9 ),
          ('47029483', 'Ingegneria del Software', 'sviluppo e progettazione software', 12),
-         ('47029485', 'Calcolo Numerico', 'studio algoritmi numerici', 6);
+         ('47029485', 'Calcolo Numerico', 'studio algoritmi numerici', 6),
+         ('47029486', 'Statistica', 'studi andamento dati numerici', 6);
 insert into Corso_Laurea (Codice, Nome, Descrizione)
   values ('110', 'Informatica e Comunicazione Digitale', 'descrizione');
 insert into Dipartimento (Codice, Nome)
@@ -93,7 +94,9 @@ insert into Docente (Matricola, Dipartimento, Nome, Cognome, Data_nascita, Codic
 insert into Esame (Matricola_studente, Codice_modulo, Matricola_docente, Data, Voto, Note)
   values ('123456', '47029484', '123333', '2020-04-07', 30, 'note'),
          ('123457', '47029483', '123334', '2020-04-07', 28, 'note'),
-         ('123456', '47029485', '123335', '2020-06-15', 23, 'note');
+         ('123456', '47029485', '123335', '2020-06-15', 23, 'note'),
+         ('123456', '47029483', '123334', '2020-06-23', 30, 'note'),
+         ('123456', '47029486', '123336', '2020-01-15', 30, 'note');
 insert into Sede_Dipartimento (Codice_Sede, Codice_Dipartimento, Note)
   values ('10001', '1001', 'note'),
          ('10002', '1002', 'note');
