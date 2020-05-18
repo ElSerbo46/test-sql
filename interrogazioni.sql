@@ -8,7 +8,7 @@ where CFU=9;
 
 select matricola, nome, cognome 
 from docente 
-where data_nascita < 1960-05-13;
+where data_nascita > data_nascita+60;
 
 \* 3) Mostrare nome, cognome e nome del dipartimento di ogni docente, ordinati dal più giovane al più anziano. *\
 
