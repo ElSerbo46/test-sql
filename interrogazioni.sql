@@ -119,7 +119,12 @@ where matricola_studente <> all (select matricola_studente
 \* 16) Mostrare, per ogni modulo, il numero degli studenti che hanno preso tra 18 e 21, quelli che
        hanno preso tra 22 e 26 e quelli che hanno preso tra 27 e 30 (con un'unica interrogazione). *\ 
 
-
+select modulo.nome, 
+       count(case when voto > 18 and voto < 21 then 1 end) as voti_tra_18_e_21, 
+       count(case when voto > 22 and voto < 26 then 1 end) as voti_tra_22_e_26, 
+       count(case when voto > 27 and voto < 30 then 1 end) as voti_tra_27_e_30 
+from modulo left join esame on codice=codice_modulo 
+group by codice_modulo;
 
 \* 17) Mostrare matricola, nome, cognome e voto di ogni studente che ha preso un voto maggiore della media
        nel modulo "BDD" *\
