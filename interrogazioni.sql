@@ -15,11 +15,11 @@ where data_nascita > data_nascita+60;
 select doc.nome, cognome, dip.nome 
 from docente doc, dipartimento dip 
 where dipartimento=codice
-order by data_nascita;
+order by data_nascita desc;
 
 select doc.nome, cognome, dip.nome 
 from docente doc join dipartimento dip on dipartimento=codice
-order by data_nascita;
+order by data_nascita desc;
 
 \* 4) Mostrare città e indirizzo di ogni sede del dipartimento di codice "1001" *\
 
@@ -77,7 +77,12 @@ order by avg(voto) desc;
        anche i docenti che non abbiano tenuto alcun esame, in quel caso rappresentati con un'unica tupla 
        in cui nome e descrizione del modulo avranno valore NULL. *\ 
 
-
+select distinct docente.nome, docente.cognome, modulo.nome, modulo.descrizione 
+from modulo left join esame on codice=codice_modulo right join docente on matricola_docente=matricola 
+where exists (select * 
+              from esame 
+              where matricola_docente=matricola) 
+or matricola_docente is null;
 
 \* 12) Mostrare matricola, nome, cognome, data di nascita, media e numero esami sostenuti di ogni studente. *\
 
@@ -96,7 +101,11 @@ having avg(voto)>27;
 
 \* 14) Mostrare nome, cognome e data di nascita di tutti gli studenti che ancora non hanno superato nessun esame. *\
 
-
+select matricola, nome, cognome 
+from studente 
+where not exists (select * 
+                  from esame 
+                  where matricola=matricola_studente);
 
 \* 15) Mostrare la matricola di tutti gli studenti che hanno superato almeno un esame e che hanno preso 
        sempre voti maggiori di 26. *\ 

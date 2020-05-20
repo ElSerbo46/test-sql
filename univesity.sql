@@ -74,7 +74,8 @@ insert into Modulo (Codice, Nome, Descrizione, CFU)
   values ('47029484', 'Basi di Dati', 'creazione e gestione database', 9 ),
          ('47029483', 'Ingegneria del Software', 'sviluppo e progettazione software', 12),
          ('47029485', 'Calcolo Numerico', 'studio algoritmi numerici', 6),
-         ('47029486', 'Statistica', 'studi andamento dati numerici', 6);
+         ('47029486', 'Statistica', 'studi andamento dati numerici', 6),
+         ('47029487', 'Sistemi Informativi', 'creazione e gestione database con trigger', 9 );
 insert into Corso_Laurea (Codice, Nome, Descrizione)
   values ('110', 'Informatica e Comunicazione Digitale', 'descrizione');
 insert into Dipartimento (Codice, Nome)
@@ -90,7 +91,8 @@ insert into Docente (Matricola, Dipartimento, Nome, Cognome, Data_nascita, Codic
   values ('123333', '1001', 'Stefano', 'Neri', '1974-01-01', 'STFNRE74A01L049Y', NULL),
          ('123334', '1001', 'Alessio', 'Bianchi', '1978-08-20', 'LSSBCH78M20E506V', NULL),
          ('123335', '1001', 'Marco', 'Bianchi', '1986-05-07', 'BNCMRC86E07E986J', NULL),
-         ('123336', '1001', 'Luca', 'Marrone', '1980-01-01', 'LCUMRN80A01E506D', NULL);
+         ('123336', '1001', 'Luca', 'Marrone', '1980-01-01', 'LCUMRN80A01E506D', NULL),
+         ('123337', '1001', 'Gianvito', 'Pio', '1990-09-05', 'PIOGVT90P05A662Q', NULL);
 insert into Esame (Matricola_studente, Codice_modulo, Matricola_docente, Data, Voto, Note)
   values ('123456', '47029484', '123333', '2020-04-07', 30, 'note'),
          ('123457', '47029483', '123334', '2020-04-07', 28, 'note'),
